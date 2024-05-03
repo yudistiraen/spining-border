@@ -1,0 +1,55 @@
+:root {
+    --slate: #020617
+}
+
+body {
+    color: white;
+    background: var(--slate);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-wrapper {
+    height: 200px;
+    width: 200px;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: linear-gradient(#1d283a, #10192b);
+
+    &::before {
+        content: '';
+        background: conic-gradient(
+            rgba(244, 144, 182, 0.4) 0deg, 
+            rgba(192, 132, 252, 0.4) 0deg, 
+            transparent 80deg);
+        position: absolute;
+        height: 150%;
+        width: 150%;
+        left: -25%;
+        top: -25%;
+        animation: borderSpin 7s infinite linear;
+    }
+
+}
+
+.card-content {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 3px);
+    width: calc(100% - 3px);
+    left: 1.5px;
+    top: 1.5px;
+    background: linear-gradient(#1d283a, #10192b);
+    border-radius: 10px;
+}
+
+@keyframes borderSpin {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
